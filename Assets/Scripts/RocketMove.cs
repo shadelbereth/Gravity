@@ -6,13 +6,13 @@ public class RocketMove : MonoBehaviour {
 
     Rigidbody2D m_rigidbody;
     [SerializeField]
-    float initialSpeed = 100;
+    float initialSpeed = 20;
     [SerializeField]
-    float speedLoss = 5;
+    float speedLoss = 1;
     [SerializeField]
     float fuel = 90;
     [SerializeField]
-    float speedBoost = 10;
+    float speedBoost = 20;
     [SerializeField]
     float fuelUsedByBoost = 10;
 
@@ -23,7 +23,7 @@ public class RocketMove : MonoBehaviour {
 	void Start () {
         Physics2D.gravity = Vector3.zero;
         m_rigidbody = GetComponent<Rigidbody2D>();
-        m_rigidbody.AddForce(transform.up * initialSpeed);
+        m_rigidbody.velocity = transform.up * initialSpeed;
         if (FuelLevelChange != null)
         {
             FuelLevelChange.Invoke(fuel);
@@ -34,14 +34,14 @@ public class RocketMove : MonoBehaviour {
 	void Update () {
         print(m_rigidbody.velocity.magnitude);
         if (m_rigidbody.velocity.magnitude > 0.01)
-            m_rigidbody.AddForce(transform.up * (-1) * speedLoss * Time.deltaTime);
+            m_rigidbody.velocity = transform.up * m_rigidbody.velocity.magnitude - transform.up * speedLoss * Time.deltaTime;
     }
 
     public void Boost ()
     {
         if (fuel >= fuelUsedByBoost)
         {
-            m_rigidbody.AddForce(transform.up * speedBoost);
+            m_rigidbody.velocity = transform.up * m_rigidbody.velocity.magnitude + transform.up * speedBoost;
             fuel -= fuelUsedByBoost;
             if (FuelLevelChange != null)
             {

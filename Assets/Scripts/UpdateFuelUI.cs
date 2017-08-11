@@ -7,14 +7,10 @@ public class UpdateFuelUI : MonoBehaviour {
 
     Text fuelUI;
 
-	// Use this for initialization
-	void Start () {
-        fuelUI = GetComponent<Text>();
-	}
-
     private void OnEnable()
     {
         RocketMove player = GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMove>();
+        fuelUI = GetComponent<Text>();
         player.FuelLevelChange += UpdateUI;
     }
 
