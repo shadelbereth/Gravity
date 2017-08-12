@@ -108,65 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &49515442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 49515443}
-  - component: {fileID: 49515445}
-  - component: {fileID: 49515444}
-  m_Layer: 0
-  m_Name: Orbit (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &49515443
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 49515442}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1217268612}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &49515444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 49515442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3fb82652660ef6479929994b43d60c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 25.6
-  speedBoost: 10.24
-  speedToEscapeGravity: 15.36
---- !u!58 &49515445
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 49515442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 12.8
 --- !u!1 &119546764
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +213,7 @@ GameObject:
   - component: {fileID: 159737050}
   - component: {fileID: 159737049}
   - component: {fileID: 159737048}
+  - component: {fileID: 159737051}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -345,11 +287,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children:
-  - {fileID: 1213147456}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159737051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159737047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a8ac63ba15235545b8670fb560476a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocityCoeff: 10
+  speedBoostCoeff: 4
+  speedToEscapeCoeff: 6
 --- !u!1 &194208385
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +409,7 @@ MonoBehaviour:
   initialSpeed: 13
   speedLoss: 1
   fuel: 90
-  speedBoost: 8
+  speedBoost: 15
   fuelUsedByBoost: 13
 --- !u!50 &296775582
 Rigidbody2D:
@@ -601,65 +556,6 @@ PolygonCollider2D:
       - {x: -0.64, y: -1.28}
       - {x: 0.64, y: -1.28}
       - {x: 0.64, y: -1.11}
---- !u!1 &1213147455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1213147456}
-  - component: {fileID: 1213147458}
-  - component: {fileID: 1213147457}
-  m_Layer: 0
-  m_Name: Orbit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1213147456
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1213147455}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 159737050}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1213147457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1213147455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3fb82652660ef6479929994b43d60c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 12.8
-  speedBoost: 5.12
-  speedToEscapeGravity: 7.68
---- !u!58 &1213147458
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1213147455}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 12.8
 --- !u!1 &1217268609
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +566,7 @@ GameObject:
   - component: {fileID: 1217268612}
   - component: {fileID: 1217268611}
   - component: {fileID: 1217268610}
+  - component: {fileID: 1217268613}
   m_Layer: 0
   m_Name: Planet (1)
   m_TagString: Untagged
@@ -743,11 +640,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45.8, y: 20.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 49515443}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217268613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217268609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a8ac63ba15235545b8670fb560476a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocityCoeff: 10
+  speedBoostCoeff: 4
+  speedToEscapeCoeff: 6
 --- !u!1 &1334645910
 GameObject:
   m_ObjectHideFlags: 0

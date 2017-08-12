@@ -8,6 +8,13 @@ public class GravityField : MonoBehaviour {
     public float speedBoost = 7;
     public float speedToEscapeGravity = 15.36f;
 
+    public void Initialize(float maxVelocity, float speedBoost, float speedToEscapeGravity)
+    {
+        this.maxVelocity = maxVelocity;
+        this.speedBoost = speedBoost;
+        this.speedToEscapeGravity = speedToEscapeGravity;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.attachedRigidbody != null)
