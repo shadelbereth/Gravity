@@ -32,7 +32,6 @@ public class RocketMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(m_rigidbody.velocity.magnitude);
         if (m_rigidbody.velocity.magnitude > 0.01)
             m_rigidbody.velocity = transform.up * m_rigidbody.velocity.magnitude - transform.up * speedLoss * Time.deltaTime;
     }

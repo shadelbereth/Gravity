@@ -30,7 +30,7 @@ public class GravityField : MonoBehaviour {
     {
         Vector2 planetDirection = (planetPos - (Vector2)satellite.position).normalized;
         Vector2 satelliteDirection = Quaternion.AngleAxis(90, Vector3.forward) * planetDirection;
-        if (Vector2.Angle(satelliteDirection, satellite.up) > 10)
+        if (Vector2.Angle(satelliteDirection, satellite.up) > Vector2.Angle(-satelliteDirection, satellite.up))
         {
             satelliteDirection *= -1;
         }
