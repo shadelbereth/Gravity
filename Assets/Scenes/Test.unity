@@ -317,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194208386}
   - component: {fileID: 194208387}
+  - component: {fileID: 194208388}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Untagged
@@ -370,7 +371,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4961310172b659e42b454904d1afd474, type: 3}
-  m_Color: {r: 0.27206182, g: 0.14451772, b: 0.5955882, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -379,6 +380,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &194208388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194208385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec69ab5ab44702649be722ab7b5f446d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &296775580
 GameObject:
   m_ObjectHideFlags: 0
