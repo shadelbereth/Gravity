@@ -11,15 +11,13 @@ public class UpdateFuelUI : MonoBehaviour {
     {
         fuelUI = GetComponent<Text>();
         RocketMove player = GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMove>();
-        if (player != null)
-            player.FuelLevelChange += UpdateUI;
+        player.FuelLevelChange += UpdateUI;
     }
 
     private void OnDisable()
     {
         RocketMove player = GameObject.FindGameObjectWithTag("Player").GetComponent<RocketMove>();
-        if (player != null)
-            player.FuelLevelChange -= UpdateUI;
+        player.FuelLevelChange -= UpdateUI;
     }
 
     public void UpdateUI(float fuelLevel)
