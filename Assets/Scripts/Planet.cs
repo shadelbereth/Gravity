@@ -5,6 +5,10 @@ using UnityEngine;
 public class Planet : MonoBehaviour {
 
     [SerializeField]
+    float fieldRadiusCoeff = 5;
+    [SerializeField]
+    string fieldLayerName = "Gravity Field";
+    [SerializeField]
     float maxVelocityCoeff = 10;
     [SerializeField]
     float speedBoostCoeff = 4;
@@ -20,7 +24,16 @@ public class Planet : MonoBehaviour {
         float planetScale = fieldHolder.transform.lossyScale.y;
         CircleCollider2D orbitZone = fieldHolder.AddComponent<CircleCollider2D>();
         orbitZone.isTrigger = true;
-        orbitZone.radius = planetRadius * 5;
+        orbitZone.radius = planetRadius * fieldRadiusCoeff;
         fieldHolder.AddComponent<GravityField>().Initialize(maxVelocityCoeff * planetRadius * planetScale, speedBoostCoeff * planetRadius * planetScale, speedToEscapeCoeff * planetRadius * planetScale);
+        GameObject fieldView = new GameObject(gameObject.name + " Orbit Visualization");
+        fieldView.transform.SetParent(gameObject.transform, false);
+        fieldView.transform.position = gameObject.transform.position;
+        fieldView.transform.localScale = new Vector3(fieldRadiusCoeff, fieldRadiusCoeff, fieldRadiusCoeff);
+        fieldView.layer = LayerMask.NameToLayer(fieldLayerName);
+        SpriteRenderer fieldSprite = fieldView.AddComponent<SpriteRenderer>();
+        fieldSprite.sprite = GetComponent<SpriteRenderer>().sprite;
+        fieldSprite.color = GetComponent<SpriteRenderer>().color;
+        fieldSprite.color = new Color(fieldSprite.color.r, fieldSprite.color.g, fieldSprite.color.b, fieldSprite.color.a / 2);
 	}
 }
