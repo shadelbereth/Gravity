@@ -33,7 +33,7 @@ public class Planet : MonoBehaviour {
         fieldView.layer = LayerMask.NameToLayer(fieldLayerName);
         SpriteRenderer fieldSprite = fieldView.AddComponent<SpriteRenderer>();
         fieldSprite.sprite = GetComponent<SpriteRenderer>().sprite;
-        fieldSprite.color = GetComponent<SpriteRenderer>().color;
+        fieldSprite.color = GetComponent<SpriteRenderer>().material.color;
         fieldSprite.color = new Color(fieldSprite.color.r, fieldSprite.color.g, fieldSprite.color.b, fieldSprite.color.a / 2);
 	}
 }

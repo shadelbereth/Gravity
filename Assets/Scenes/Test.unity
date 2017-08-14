@@ -250,7 +250,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 94bc6d317eb34504cbf1e3becaa9585d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -426,6 +426,7 @@ MonoBehaviour:
   fuel: 90
   speedBoost: 15
   fuelUsedByBoost: 10
+  lostScene: Lost
 --- !u!50 &296775582
 Rigidbody2D:
   serializedVersion: 4
@@ -851,7 +852,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 64ad80eb7bfcea3449247904d031107e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -871,7 +872,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 448194be41f5bd246a6f548dcb58a9e2, type: 3}
-  m_Color: {r: 0.38489407, g: 0.44333386, b: 0.8308824, a: 1}
+  m_Color: {r: 0.86764705, g: 0.445527, b: 0.12121541, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
