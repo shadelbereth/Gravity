@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 778533846}
   m_Layer: 5
   m_Name: Placeholder
-  m_TagString: Placeholder
+  m_TagString: TextToChange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1529,9 +1529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: Test
-  placeHolderTexts:
+  placeholderTexts:
   - Tell us your name here...
-  - We need a name to let you go.
+  - We need a name to let you go!
   - Don't you have a name?
 --- !u!4 &1963007072
 Transform:
