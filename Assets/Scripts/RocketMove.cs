@@ -13,9 +13,13 @@ public class RocketMove : MonoBehaviour {
     [SerializeField]
     float fuel = 90;
     [SerializeField]
-    float speedBoost = 20;
+    float speedBoost = 15;
+    [SerializeField]
+    float lateralSpeedBoost = 5;
     [SerializeField]
     float fuelUsedByBoost = 10;
+    [SerializeField]
+    float fuelUsedByLateralBoost = 2;
     [SerializeField]
     string lostScene = "Lost";
 
@@ -55,6 +59,20 @@ public class RocketMove : MonoBehaviour {
         {
             m_rigidbody.velocity = transform.up * m_rigidbody.velocity.magnitude + transform.up * speedBoost;
             fuel -= fuelUsedByBoost;
+            if (FuelLevelChange != null)
+            {
+                FuelLevelChange.Invoke(fuel);
+            }
+        }
+    }
+
+    public void LateralBoost (float angle)
+    {
+        if (fuel >= fuelUsedByLateralBoost)
+        {
+            transform.up = Quaternion.AngleAxis(angle, Vector3.forward) * transform.up;
+            m_rigidbody.velocity = transform.up * m_rigidbody.velocity.magnitude + transform.up * lateralSpeedBoost;
+            fuel -= fuelUsedByLateralBoost;
             if (FuelLevelChange != null)
             {
                 FuelLevelChange.Invoke(fuel);
