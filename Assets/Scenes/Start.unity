@@ -947,7 +947,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tell us your name here...
+  m_Text: Tell us your name HERE...
 --- !u!222 &778533847
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 1163032694}
   - component: {fileID: 1163032693}
   m_Layer: 0
-  m_Name: rocket
+  m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
