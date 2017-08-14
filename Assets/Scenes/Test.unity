@@ -425,7 +425,7 @@ MonoBehaviour:
   speedLoss: 1
   fuel: 90
   speedBoost: 15
-  fuelUsedByBoost: 13
+  fuelUsedByBoost: 10
 --- !u!50 &296775582
 Rigidbody2D:
   serializedVersion: 4
