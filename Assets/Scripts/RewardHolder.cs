@@ -22,4 +22,9 @@ public class RewardHolder : MonoBehaviour {
             RewardGained.Invoke(gainedReward);
         }
     }
+
+    public void SaveReward ()
+    {
+        PlayerPrefs.SetFloat("Score", gainedReward);
+    }
 }

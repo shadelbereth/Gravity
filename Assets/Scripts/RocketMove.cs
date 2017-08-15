@@ -27,9 +27,11 @@ public class RocketMove : MonoBehaviour {
 
     public delegate void OnFuelLevelChanged(float fuel);
     public event OnFuelLevelChanged FuelLevelChange;
+    public delegate void OnScoreSave();
+    public event OnScoreSave SaveScore;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Physics2D.gravity = Vector3.zero;
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_rigidbody.velocity = transform.up * initialSpeed;
@@ -37,6 +39,7 @@ public class RocketMove : MonoBehaviour {
         {
             FuelLevelChange.Invoke(fuel);
         }
+        SaveScore += GetComponent<RewardHolder>().SaveReward;
 	}
 	
 	// Update is called once per frame
@@ -47,6 +50,7 @@ public class RocketMove : MonoBehaviour {
         {
             if (Mathf.Abs(m_rigidbody.velocity.magnitude - lastVelocityMagnitude) < 0.01 * Time.deltaTime)
             {
+                SaveScore.Invoke();
                 SceneManager.LoadScene(lostScene);
             }
             lastVelocityMagnitude = m_rigidbody.velocity.magnitude;

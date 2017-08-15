@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerName
   - TextToChange
+  - RewardText
   layers:
   - Default
   - TransparentFX

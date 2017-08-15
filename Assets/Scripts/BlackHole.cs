@@ -8,12 +8,21 @@ public class BlackHole : MonoBehaviour {
     [SerializeField]
     string nextLevel = "Win";
 
+    public delegate void OnScoreSave();
+    public event OnScoreSave SaveScore;
+
+    private void Start()
+    {
+        SaveScore += GameObject.FindGameObjectWithTag("Player").GetComponent<RewardHolder>().SaveReward;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.attachedRigidbody != null)
         {
             if (Vector2.Distance(transform.position, collision.transform.position) < collision.transform.lossyScale.magnitude)
             {
+                SaveScore.Invoke();
                 SceneManager.LoadScene(nextLevel);
             }
             collision.transform.up = Vector2.Lerp(collision.transform.up, CalculateSuction(transform.position, collision.transform), Time.deltaTime * 100);
