@@ -7,6 +7,8 @@ TagManager:
   - PlayerName
   - TextToChange
   - RewardText
+  - InfoUI
+  - TutorialUI
   layers:
   - Default
   - TransparentFX

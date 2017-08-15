@@ -49,7 +49,6 @@ public class RewardGiver : MonoBehaviour {
                     if (areaToExplore[i].beginAngle <= explorationAngle & areaToExplore[i].endAngle > explorationAngle & areaToExplore[i].polarity * polarity >= 0)
                     {
                         holder.GetReward(areaToExplore[i].value);
-                        Debug.Log(areaToExplore[i].beginAngle.ToString() + " " + areaToExplore[i].polarity.ToString() + " " + explorationAngle.ToString());
                         areaToExplore.Remove(areaToExplore[i]);
                     }
                     i++;
